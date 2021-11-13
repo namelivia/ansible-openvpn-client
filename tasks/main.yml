@@ -1,0 +1,25 @@
+---
+- name: Install required system packages
+  apt: name={{ item }} state=latest update_cache=yes
+  loop: ['openvpn']
+
+- name: Set autostart on openvpn
+  copy:
+    src: ../templates/openvpn
+    dest: /etc/default/openvpn
+    owner: root
+    group: root
+
+- name: Copy vpn server config
+  copy:
+    src: "{{openvpn_client_config_path}}"
+    dest: /etc/openvpn/test.conf
+    owner: root
+    group: root
+
+#TODO: Seems this is not enough? I had to reboot the pi
+# the first time.
+- name: Restart the openvpn service
+  service:
+    name: openvpn
+    state: restarted
