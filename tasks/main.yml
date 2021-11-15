@@ -1,4 +1,9 @@
 ---
+- name: 'Check mandatory variables are defined'
+  assert:
+    that:
+      - openvpn_client_config_path is defined
+
 - name: Install required system packages
   apt: name={{ item }} state=latest update_cache=yes
   loop: ['openvpn']
