@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: namelivia.openvpn-client
+  role_name: openvpn_client
   author: José Ignacio Amelivia Santiago <jignacio.amelivia@gmail.com>
   description: Ansible role I use to install and configure openvpn clients
   license: GPLv2
