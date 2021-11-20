@@ -1,4 +1,4 @@
-# OpenVPN client Ansible role
+# OpenVPN client Ansible role [![Ansible Lint](https://github.com/namelivia/ansible-openvpn-client/actions/workflows/ansible-lint.yml/badge.svg)](https://github.com/namelivia/ansible-openvpn-client/actions/workflows/ansible-lint.yml)
 
 ## This is a WIP
 
