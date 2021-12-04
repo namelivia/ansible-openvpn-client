@@ -2,7 +2,11 @@
 - name: 'Check mandatory variables are defined'
   assert:
     that:
-      - openvpn_client_config_path is defined
+      - vpn_endpoint is defined
+      - client_private_key is defined
+      - client_certificate is defined
+      - server_ca is defined
+      - openvpn_static_key is defined
 
 - name: Install required system packages
   apt: name={{ item }} state=latest update_cache=yes
@@ -16,10 +20,10 @@
     group: root
     mode: 0600
 
-- name: Copy vpn server config
-  copy:
-    src: "{{ openvpn_client_config_path }}"
-    dest: /etc/openvpn/test.conf
+- name: Create vpn config
+  template:
+    src: config.j2
+    dest: "/etc/openvpn/{{ hostvars[inventory_hostname] }}.conf"
     owner: root
     group: root
     mode: 0600
