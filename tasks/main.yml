@@ -28,7 +28,6 @@
     group: root
     mode: 0600
     lstrip_blocks: true  # To avoid auto indent
-    newline_sequence: "\r"  # This is needed for openvpn to pickup the config
 
 # TODO: Seems this is not enough? I had to reboot the pi
 # the first time.
