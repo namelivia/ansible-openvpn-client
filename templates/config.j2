@@ -3,6 +3,7 @@ client
 nobind
 dev tun
 remote-cert-tls server
+pull-filter ignore redirect-gateway
 
 remote {{ vpn_endpoint }} 1194 udp
 
@@ -22,5 +23,3 @@ key-direction 1
 #
 {{ openvpn_static_key }}
 </tls-auth>
-
-redirect-gateway def1
