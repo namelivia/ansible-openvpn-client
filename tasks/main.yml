@@ -29,8 +29,7 @@
     mode: 0600
     lstrip_blocks: true  # To avoid auto indent
 
-# TODO: Seems this is not enough? I had to reboot the pi
-# the first time.
+# TODO: Seems this is not enough? I always have to reboot clients for them to connect
 - name: Restart the openvpn service
   service:
     name: openvpn
